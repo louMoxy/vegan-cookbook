@@ -1,0 +1,34 @@
+@import "./vars.scss";
+
+nav {
+    grid-column: 1 / 2;
+    background: var(--primary-color);
+    font-family: var(--accent-font);
+    ul {
+        position: sticky;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: space-around;
+        max-height: 100vh;
+        li {
+            svg {
+                stroke: var(--subtle-color);
+                fill: var(--subtle-color);
+                stroke-width: 0;
+                max-width: 80px;
+                transition: 0.45s;
+                &:hover {
+                    stroke: var(--accent-color);
+                    fill: var(--accent-color);
+                }
+            }
+            a {
+                color: var(--accent-color);
+                text-align: center;
+            }
+        }
+    }
+}

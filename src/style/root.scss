@@ -1,0 +1,32 @@
+@import "./vars.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#___gatsby > div {
+    grid-template-columns: 150px repeat(10, 1fr);
+    display: grid;
+    min-height: 100vh;
+    ul {
+        list-style-type: none;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+.content {
+    grid-column: 2 / -1;
+    background: var(--subtle-color);
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+    a {
+        color: var(--accent-color);
+        font-family: var(--accent-font);
+        transition: color 0.45s;
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+}

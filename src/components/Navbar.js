@@ -1,40 +1,59 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
+require('../style/nav.scss');
 
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import AllSvg from '../img/icons/all-icon.svg';
+import BreakfastSvg from '../img/icons/breakfast-icon.svg';
+import DinnerSvg from '../img/icons/dinner-icon.svg';
+import DessertSvg from '../img/icons/dessert-icon.svg';
+import PantrySvg from '../img/icons/pantry-icon.svg';
+import DogSvg from '../img/icons/dog-icon.svg';
 
 const Navbar = () => (
-  <nav className="navbar is-transparent">
-    <div className="container">
-      <div className="navbar-brand">
+  <nav>
+    <ul>
+      <li>
+      <Link to="/" className="navbar-item">
+        <h1>Vegan Cookbook</h1>
+      </Link>
+    </li>
+      <li>
         <Link to="/" className="navbar-item">
-          <figure className="image">
-            <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-          </figure>
+          <AllSvg />
+          <p>All</p>
         </Link>
-      </div>
-      <div className="navbar-start">
-        <Link className="navbar-item" to="/about">
-          About
+      </li>
+      <li>
+        <Link to="/" className="navbar-item">
+          <BreakfastSvg />
+          <p>Breakfast</p>
         </Link>
-        <Link className="navbar-item" to="/products">
-          Products
+      </li>
+      <li>
+        <Link to="/" className="navbar-item">
+          <DinnerSvg />
+          <p>Dinner</p>
         </Link>
-      </div>
-      <div className="navbar-end">
-        <a
-          className="navbar-item"
-          href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="icon">
-            <img src={github} alt="Github" />
-          </span>
-        </a>
-      </div>
-    </div>
+      </li>
+      <li>
+        <Link to="/" className="navbar-item">
+          <DessertSvg />
+          <p>Dessert</p>
+        </Link>
+      </li>
+      <li>
+        <Link to="/" className="navbar-item">
+          <PantrySvg />
+          <p>Pantry</p>
+        </Link>
+      </li>
+      <li>
+        <Link to="/" className="navbar-item">
+          <DogSvg />
+          <p>Dog Treats</p>
+        </Link>
+      </li>
+    </ul>
   </nav>
 )
 

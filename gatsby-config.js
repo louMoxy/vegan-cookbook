@@ -33,5 +33,8 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
+    {
+      resolve: '@jacobmischka/gatsby-plugin-react-svg'
+    }
   ],
 }
