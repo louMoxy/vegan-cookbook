@@ -23,7 +23,7 @@ collections:
     label: "Recipe"
     folder: "src/pages/recipe"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "recipe-post"}
       - {label: "Title", name: "title", widget: "string"}
