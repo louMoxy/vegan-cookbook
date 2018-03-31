@@ -1,10 +1,12 @@
 @import "./vars.scss";
 
-nav {
+#___gatsby nav {
     grid-column: 1 / 2;
     background: var(--primary-color);
     font-family: var(--accent-font);
     ul {
+        list-style-type: none;
+        margin-left: 0px;
         position: sticky;
         top: 0;
         display: flex;

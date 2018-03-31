@@ -19,6 +19,23 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 
+  - name: "recipe"
+    label: "Recipe"
+    folder: "src/pages/recipe"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "recipe-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Ingredients", name: "ingredients", widget: "list", fields: [{label: "Ingredient item", name: ingredientItem, widget: string}]}
+      - {label: "Method", name: "method", widget: "markdown"}
+      - {label: "Prep Time", name: "prepTime", widget: "string"}
+      - {label: "Cook Time", name: "cookTime", widget: "string"}
+      - {label: "Serves", name: "serves", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: image, widget: image}, {label: "Alt", name: alt, widget: string}, {label: "Size", name: "imgSize", widget: "select",  options: ["regular", "horizontal", "vertical", "big"], default: "regular"}]}
+
   - name: "pages"
     label: "Pages"
     files:
