@@ -11,7 +11,7 @@ export const RecipePostTemplate = ({
   tags,
   title,
   helmet,
-  method,
+  body,
   ingredients,
   prepTime,
   cookTime,
@@ -35,7 +35,7 @@ export const RecipePostTemplate = ({
           </div>
           <h3>Method</h3>
           <div className="recipe__method">
-            <PostContent content={method} />
+            <PostContent content={body} />
           </div>
           <div className="recipe__info">
             <p><span>Cook Time: </span>{cookTime}</p>
@@ -58,8 +58,8 @@ export const RecipePostTemplate = ({
             ) : null} */}
         <div className="recipe__image">
           {images.map( (img, index) => (
-              <div key={index} className={img.imgSize}>
-                <img src={img.image} alt={img.alt || 'Food image'}/>
+              <div>
+                <img key={index} src={img.image} alt={img.alt}/>
               </div>
             ))}
         </div>
@@ -72,7 +72,7 @@ RecipePostTemplate.propTypes = {
   title: PropTypes.string,
   helmet: PropTypes.instanceOf(Helmet),
   tags: PropTypes.array,
-  method: PropTypes.string,
+  body: PropTypes.string,
   ingredients: PropTypes.array,
   prepTime: PropTypes.string,
   cookTime: PropTypes.string,
@@ -80,15 +80,16 @@ RecipePostTemplate.propTypes = {
   images: PropTypes.array
 }
 
-const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
+const RecipePost = ({ data }) => {
+  const { markdownRemark: post } = data;
+  console.log(post.frontmatter.images);
   return (
     <RecipePostTemplate
       contentComponent={HTMLContent}
       helmet={<Helmet title={`${post.frontmatter.title} | Recipe`} />}
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
-      method={post.html}
+      body={post.html}
       ingredients={post.frontmatter.ingredients}
       prepTime={post.frontmatter.prepTime}
       cookTime={post.frontmatter.cookTime}
@@ -98,13 +99,13 @@ const BlogPost = ({ data }) => {
   )
 }
 
-BlogPost.propTypes = {
+RecipePost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
-export default BlogPost
+export default RecipePost
 
 export const pageQuery = graphql`
   query RecipePostByID($id: String!) {
@@ -120,6 +121,7 @@ export const pageQuery = graphql`
         serves
         images {
           image
+          alt
           imgSize
       	}
       }
