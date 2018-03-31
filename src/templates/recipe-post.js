@@ -58,8 +58,8 @@ export const RecipePostTemplate = ({
             ) : null} */}
         <div className="recipe__image">
           {images.map( (img, index) => (
-              <div>
-                <img key={index} src={img.image} alt={img.alt}/>
+              <div key={index}>
+                <img src={img.image} alt={img.alt}/>
               </div>
             ))}
         </div>
