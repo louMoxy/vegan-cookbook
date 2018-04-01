@@ -9,6 +9,7 @@ export default class IndexPage extends React.Component {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
     const tags = uniq(flatMap(posts, post => post.node.frontmatter.tags));
+    console.log(posts)
     return (
       <section className="index">
         <div className="index__tags">
@@ -26,7 +27,7 @@ export default class IndexPage extends React.Component {
                         {post.frontmatter.title}
                     </h3>
                     <p>
-                      {post.excerpt}
+                      {post.frontmatter.blurb || post.excerpt}
                     </p>
                   </div>
               </Link>
@@ -67,6 +68,7 @@ export const pageQuery = graphql`
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
+            blurb
           }
         }
       }

@@ -9,6 +9,7 @@ ingredients:
 prepTime: 25 mins
 cookTime: 30 mins
 serves: I usually get 40 small treat balls
+blurb: Treat your good boy..
 tags:
   - Dog
   - Treats
