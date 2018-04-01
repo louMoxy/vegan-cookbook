@@ -25,6 +25,7 @@ tags:
 images:
   - alt: Chocolate Cake
     image: /img/cake-1850011_1920.jpg
+category: Dessert
 ---
 * Heat oven and grease up two cake tins
 * Stir lemon juice (1 tbsp) in with the milk (300 ml) leave to curdle for a couple of mins

@@ -17,6 +17,7 @@ images:
   - alt: img
     image: /img/jumbotron.jpg
     imgSize: big
+category: Dog treats
 ---
 * Mix all together in a bowl
 * Put in the fridge for 20 mins to firm up

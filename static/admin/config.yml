@@ -35,6 +35,7 @@ collections:
       - {label: "Cook Time", name: "cookTime", widget: "string"}
       - {label: "Serves", name: "serves", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Categories", name: "category", widget: "select", required: true, options: ["Breakfast", "Dinner", "Dessert", "Pantry", "Dog treats"]}
       - {label: "Images", name: "images", widget: "list", fields: [{label: "Image", name: image, widget: image}, {label: "Alt", name: alt, widget: string, default: "Food image"}, {label: "Size", name: "imgSize", widget: "select",  options: ["regular", "horizontal", "vertical", "big"], default: "regular"}]}
 
   - name: "pages"

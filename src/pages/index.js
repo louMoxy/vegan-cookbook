@@ -69,6 +69,7 @@ export const pageQuery = graphql`
             templateKey
             date(formatString: "MMMM DD, YYYY")
             blurb
+            category
           }
         }
       }
