@@ -1,0 +1,84 @@
+@import "./vars.scss";
+
+.content .index{
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    --animation-time: 0.35s;
+    .index__tags {
+        display: flex;
+        flex: 0 0 100%;
+        margin-bottom: 30px;
+        p {
+            span {
+                font-weight: bold;
+            }
+            padding: 4px;
+            margin-left: 3px;
+        }
+    }
+    .card {
+        --background-color: var(--primary-color);
+        --text-color: var(--accent-color);
+        position: relative;
+        flex-basis: auto;
+        margin: 15px 35px;
+        max-width: 350px;
+        z-index: 1;
+        color: var(--subtle-color);
+        font-size: 14px;
+        &:hover {
+            color: var(--subtle-color);
+            &:before, &:after {
+                height: 100%;
+                width: 100%;
+                transform: translate(0%, 0%);
+            }
+            img {
+                width: 100%;
+            }
+        }
+        &:nth-child(odd) {
+            --background-color: var(--accent-color);
+            h3{
+                color: var(--primary-color);
+            } 
+        }
+        h3 {
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+        img {
+            object-fit: cover;
+            height: 50%;
+            width: 90%;
+            transition: width var(--animation-time);
+        }
+        .card__info {
+            width: 80%;
+            margin-left: 15%;
+            margin-top: 15px;
+        }
+        &:before, &:after {
+            transition: var(--animation-time);
+            content: "";
+            height: 90%;
+            width: 90%;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            z-index: -1;
+        }
+        &:before {
+            background: var(--background-color);
+            transform: translate(10%, 10%);
+        }
+        &:after {
+            border: solid 2px var(--background-color);
+            transform: translate(11%, 11%);
+        }
+    }
+}

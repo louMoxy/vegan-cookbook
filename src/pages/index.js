@@ -1,44 +1,36 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
+import { kebabCase, uniq, flatMap} from 'lodash'
+require('../style/index.scss');
 
 export default class IndexPage extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
-
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
+    const tags = uniq(flatMap(posts, post => post.node.frontmatter.tags));
     return (
-      <section className="section">
-        <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-          </div>
-          {posts
-            .filter(post => post.node.frontmatter.templateKey === 'blog-post')
-            .map(({ node: post }) => (
-              <div
-                className="content"
-                style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                key={post.id}
-              >
-                <p>
-                  <Link className="has-text-primary" to={post.fields.slug}>
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
-                </p>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button is-small" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
-              </div>
-            ))}
+      <section className="index">
+        <div className="index__tags">
+        <p><span>Tags: </span></p>
+          {tags.map(tag => (
+          <p key={tag}><Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link></p>
+          ))}
         </div>
+          {posts
+            .map(({ node: post }) => (
+              <Link className="card" to={post.fields.slug} key={post.id}>
+                <img src={post.frontmatter.images[0].image} />
+                  <div className="card__info">
+                    <h3>
+                        {post.frontmatter.title}
+                    </h3>
+                    <p>
+                      {post.excerpt}
+                    </p>
+                  </div>
+              </Link>
+            ))}
       </section>
     )
   }
@@ -53,16 +45,25 @@ IndexPage.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+  query IndexQuery($templateKey: String = "recipe-post"){
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date]},
+      filter: {
+        frontmatter: { templateKey: { eq: $templateKey } }
+      }
+      ){
       edges {
         node {
-          excerpt(pruneLength: 400)
+          excerpt(pruneLength: 60)
           id
           fields {
             slug
           }
-          frontmatter {
+          frontmatter{
+            images {
+              image
+            }
+            tags
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")

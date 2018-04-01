@@ -82,7 +82,6 @@ RecipePostTemplate.propTypes = {
 
 const RecipePost = ({ data }) => {
   const { markdownRemark: post } = data;
-  console.log(post.frontmatter.images);
   return (
     <RecipePostTemplate
       contentComponent={HTMLContent}
