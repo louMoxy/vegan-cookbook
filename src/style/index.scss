@@ -16,6 +16,10 @@
             font-weight: bold;
             background: none;
             border: none;
+            &:hover {
+                background: none;
+                color: var(--primary-color);
+            }
         }
         p {
             padding: 4px 8px;
