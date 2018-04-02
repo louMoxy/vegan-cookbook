@@ -104,7 +104,7 @@ RecipePost.propTypes = {
   }),
 }
 
-export default RecipePost
+export default RecipePost;
 
 export const pageQuery = graphql`
   query RecipePostByID($id: String!) {

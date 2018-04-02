@@ -45,13 +45,11 @@ IndexPage.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query IndexQuery($templateKey: String = "recipe-post", $category: String, $tags: [String]){
+  query CategoryQuery($templateKey: String = "recipe-post", $category: String){
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date]},
       filter: {
-        frontmatter: { templateKey: { eq: $templateKey },
-        category: { eq: $category },
-        tags: { in: $tags } }
+        frontmatter: { templateKey: { eq: $templateKey },  category: { eq: $category } }
       }
       ){
       edges {
