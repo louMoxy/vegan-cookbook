@@ -24,31 +24,31 @@ const Navbar = () => (
         </Link>
       </li>
       <li>
-        <Link to="/" className="navbar-item">
+        <Link to="/category/breakfast" className="navbar-item">
           <BreakfastSvg />
           <p>Breakfast</p>
         </Link>
       </li>
       <li>
-        <Link to="/" className="navbar-item">
+        <Link to="/category/dinner" className="navbar-item">
           <DinnerSvg />
           <p>Dinner</p>
         </Link>
       </li>
       <li>
-        <Link to="/" className="navbar-item">
+        <Link to="/category/dessert" className="navbar-item">
           <DessertSvg />
           <p>Dessert</p>
         </Link>
       </li>
       <li>
-        <Link to="/" className="navbar-item">
+        <Link to="/category/pantry" className="navbar-item">
           <PantrySvg />
           <p>Pantry</p>
         </Link>
       </li>
       <li>
-        <Link to="/" className="navbar-item">
+        <Link to="/category/dog-treats" className="navbar-item">
           <DogSvg />
           <p>Dog Treats</p>
         </Link>
