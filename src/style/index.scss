@@ -12,12 +12,22 @@
         display: flex;
         flex: 0 0 100%;
         margin-bottom: 30px;
+        .index__tags--nonLink {
+            font-weight: bold;
+            background: none;
+            border: none;
+        }
         p {
-            span {
-                font-weight: bold;
+            padding: 4px 8px;
+            margin-left: 5px;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            transition: color var(--animation-time), background var(--animation-time);
+            border: 2px solid var(--accent-color);
+            &:hover, &.selected {
+                background: var(--primary-color);
+                color: var(--accent-color);
             }
-            padding: 4px;
-            margin-left: 3px;
         }
     }
     .card {

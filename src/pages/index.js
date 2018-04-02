@@ -1,10 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-import { kebabCase, uniq, flatMap} from 'lodash'
+import { kebabCase, uniq, flatMap, xor} from 'lodash'
 require('../style/index.scss');
 
 export default class IndexPage extends React.Component {
+  modifyTags(tag) {
+    const tagsArray = xor(this.state.tags, [tag]);
+    this.setState({
+      tags: tagsArray
+    })
+  }
+
+  constructor(props){
+    super(props);
+      this.state = {
+        tags: []
+    }
+  }
+
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
@@ -12,12 +26,22 @@ export default class IndexPage extends React.Component {
     return (
       <section className="index">
         <div className="index__tags">
-        <p><span>Tags: </span></p>
+        <p className="index__tags--nonLink">Tags:</p>
           {tags.map(tag => (
-          <p key={tag}><Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link></p>
+          <p key={tag}
+            onClick={() =>this.modifyTags(tag)}
+            className={this.state.tags.includes(tag) ? 'selected' : ''}
+          >
+          {tag}</p>
           ))}
         </div>
           {posts
+            .filter(post =>  {
+              const tags = post.node.frontmatter.tags;
+              return this.state.tags.length > 0 ? 
+                 post.node.frontmatter && tags.some(tag => this.state.tags.includes(tag))
+                : true
+            })
             .map(({ node: post }) => (
               <Link className="card" to={post.fields.slug} key={post.id}>
                 <img src={post.frontmatter.images[0].image} />
