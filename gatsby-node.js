@@ -15,7 +15,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               slug
             }
             frontmatter {
-              tags
               templateKey
               category
             }
@@ -47,32 +46,16 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       })
     })
 
-    // Iterate through each post, putting all found tags into `tags`
-    const tags = uniq(flatMap(posts, post => post.node.frontmatter.tags));
-
-    // Make tag pages
-    tags.forEach(tag => {
-      const tagPath = `/tags/${kebabCase(tag)}/`
-
-      createPage({
-        path: tagPath,
-        component: path.resolve(`src/pages/index.js`),
-        context: {
-          tags: tag,
-        },
-      });
-    });
-
     // Iterate through each post, putting all found tags into `category`
     const categories = uniq(flatMap(posts, post => post.node.frontmatter.category));
-
+    const test = uniq(flatMap(posts, post => post.node.frontmatter));
     // Make category pages
     categories.forEach(category => {
       const categoryPath = `/category/${kebabCase(category)}/`
 
       createPage({
         path: categoryPath,
-        component: path.resolve(`src/pages/index.js`),
+        component: path.resolve(`src/templates/category.js`),
         context: {
           category,
         },

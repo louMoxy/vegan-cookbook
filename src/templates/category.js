@@ -21,6 +21,7 @@ export default class IndexPage extends React.Component {
 
   render() {
     const { data } = this.props;
+    if(!data.allMarkdownRemark) { return (<div></div>)}
     const { edges: posts } = data.allMarkdownRemark;
     const tags = uniq(flatMap(posts, post => post.node.frontmatter.tags));
     return (
@@ -69,12 +70,13 @@ IndexPage.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query IndexQuery($templateKey: String = "recipe-post"){
+  query CategoryQuery($category: String){
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date]},
       filter: {
-        frontmatter: { templateKey: { eq: $templateKey }
-       }
+        frontmatter: { templateKey: { eq: "recipe-post" },
+        category: { eq: $category }
+        }
       }
       ){
       edges {
