@@ -55,7 +55,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
       createPage({
         path: categoryPath,
-        component: path.resolve(`src/templates/category.js`),
+        component: path.resolve(`src/pages/index.js`),
         context: {
           category,
         },
