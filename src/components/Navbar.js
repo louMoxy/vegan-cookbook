@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 require('../style/nav.scss');
-
+import Logo from '-!svg-react-loader?name=Logo!../img/logo.svg';
 import AllSvg from '../img/icons/all-icon.svg';
 import BreakfastSvg from '../img/icons/breakfast-icon.svg';
 import DinnerSvg from '../img/icons/dinner-icon.svg';
@@ -14,11 +14,11 @@ const Navbar = () => (
     <ul>
       <li>
       <Link to="/" className="navbar-item">
-        <h1>Vegan Cookbook</h1>
+        <Logo />
       </Link>
     </li>
       <li>
-        <Link to="/" className="navbar-item">
+        <Link to="/">
           <AllSvg />
           <p>All</p>
         </Link>
