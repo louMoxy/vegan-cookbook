@@ -1,0 +1,15 @@
+@import "./vars.scss";
+footer {
+    p {
+        font-style: italic;
+        color: var(--primary-color);
+        position: absolute;
+        right: 20px;
+        bottom: 5px;
+        text-shadow: 1px 1px 1px #fff;
+        a {
+            color: var(--primary-color) !important;
+            font-family: var(--primary-font) !important;
+        }
+    }
+}
