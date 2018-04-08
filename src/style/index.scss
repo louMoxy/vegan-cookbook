@@ -2,8 +2,7 @@
 
 .content .index{
     display: flex;
-    width: 80%;
-    margin-left: 10%;
+    width: 98%;
     margin-top: 30px;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -12,6 +11,7 @@
         display: flex;
         flex: 0 0 100%;
         margin-bottom: 30px;
+        flex-wrap: wrap;
         .index__tags--nonLink {
             font-weight: bold;
             background: none;
