@@ -6,8 +6,9 @@
 }
 
 #___gatsby{
+    background: var(--subtle-color);
     & > div {
-        grid-template-columns: 150px repeat(10, 1fr);
+        grid-template-columns:repeat(2, 1fr) repeat(10, 3fr);
         display: grid;
         min-height: 100vh;
     }
@@ -23,8 +24,7 @@
     }
 }
 .content {
-    grid-column: 2 / -1;
-    background: var(--subtle-color);
+    grid-column: 3 / -1;
     color: var(--primary-color);
     font-family: var(--primary-font);
     a {
