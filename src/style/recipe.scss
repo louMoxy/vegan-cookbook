@@ -3,11 +3,11 @@
 .recipe {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    height: 100vh;
+    grid-template-rows: 50px auto 80px auto 80px;
     --stroke-width: 2px;
     --padding: 5px;
     --border: solid var(--stroke-width) var(--primary-color);
+    min-height: 100vh;
     h3 {
         font-size: 25px;
     }
@@ -27,7 +27,7 @@
     }
     .recipe__container {
         grid-column: 2 / 6;
-        grid-row-start: 6;
+        grid-row: 4 / 5;
         border: solid 2px var(--primary-color);
         h3 {
             padding: 10px;
