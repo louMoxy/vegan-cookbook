@@ -8,7 +8,7 @@
 #___gatsby{
     background: var(--subtle-color);
     & > div {
-        grid-template-columns:repeat(2, 1fr) repeat(10, 3fr);
+        grid-template-columns:repeat(2, 2fr) repeat(10, 4fr);
         grid-template-rows: 1fr;
         display: grid;
         min-height: 100vh;
