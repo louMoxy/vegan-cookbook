@@ -1,23 +1,24 @@
 ---
 templateKey: recipe-post
 title: 3 Ingredients Dog Treats
-date: 2018-03-31T15:04:10+01:00
+date: 2018-03-31T14:04:10.000Z
 ingredients:
   - 1 cup of oat/rice/buckwheat flour (any works)
   - 2 Bananas
   - 1/4 cup Peanut Butter or apple puree
+blurb: Treat your good boy..
 prepTime: 25 mins
 cookTime: 30 mins
 serves: I usually get 40 small treat balls
-blurb: Treat your good boy..
 tags:
   - Dog
   - Treats
-images:
-  - alt: img
-    image: /img/jumbotron.jpg
-    imgSize: big
 category: Dog treats
+images:
+  - image: /img/20180402_143406.jpg
+    imgSize: big
+  - image: /img/20180409_212532.jpg
+  - image: /img/20180409_212415.jpg
 ---
 * Mix all together in a bowl
 * Put in the fridge for 20 mins to firm up
