@@ -28,6 +28,7 @@
     grid-column: 3 / -1;
     color: var(--primary-color);
     font-family: var(--primary-font);
+    min-height: 100vh;
     a {
         color: var(--accent-color);
         font-family: var(--accent-font);

@@ -5,7 +5,7 @@
     width: 98%;
     margin-top: 30px;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-around;
     --animation-time: 0.35s;
     .index__tags {
         display: flex;
@@ -31,6 +31,9 @@
             &:hover, &.selected {
                 background: var(--primary-color);
                 color: var(--accent-color);
+            }
+            @media (max-width: 700px) {
+                font-size: 12px;
             }
         }
     }

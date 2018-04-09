@@ -1,15 +1,15 @@
 @import "./vars.scss";
 footer {
+    background: var(--primary-color);
+    grid-column: 1 /-1;
     p {
+        text-align: right;
+        padding: 5px;
         font-style: italic;
-        color: var(--primary-color);
-        position: absolute;
-        right: 20px;
-        bottom: 5px;
-        text-shadow: 1px 1px 1px #fff;
+        color: var(--subtle-color);
         a {
-            color: var(--primary-color) !important;
-            font-family: var(--primary-font) !important;
+            color: var(--subtle-color) !important;
+            // font-family: var(--primary-font) !important;
         }
     }
 }
