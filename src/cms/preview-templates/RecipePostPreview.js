@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { RecipePostTemplate } from '../../templates/recipe-post';
+require('../../style/recipe.scss');
 
 const RecipePostPreview = ({ entry, widgetFor }) => {
     const entryImages = entry.getIn(['data', 'images']);

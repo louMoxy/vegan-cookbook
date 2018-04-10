@@ -3,7 +3,7 @@
 .recipe {
     display: grid;
     grid-template-columns: 50px repeat(12, 1fr);
-    grid-template-rows: 50px auto 80px auto 80px;
+    grid-template-rows: 50px auto 40px repeat(8, auto) 80px;
     --stroke-width: 2px;
     --padding: 5px;
     --border: solid var(--stroke-width) var(--primary-color);
@@ -30,13 +30,14 @@
     }
     .recipe__container {
         grid-column: 2 / 6;
-        grid-row: 4 / 5;
+        grid-row-start: 7;
         border: solid 2px var(--primary-color);
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         @media (max-width: 1300px) {
             grid-column: 2 / 13;
+            grid-row-start: 4;
         }
         h3 {
             padding: 10px;
@@ -60,6 +61,16 @@
                 }
                 &:nth-child(n+3) {
                     border-top: var(--border);
+                }
+                @media (max-width: 700px) {
+                    flex: 100%;
+                    border-top: var(--border);
+                    &:nth-child(odd) {
+                        border-right: none;
+                    }
+                    &.empty {
+                        display: none;
+                    }
                 }
             }
         }
@@ -113,6 +124,6 @@
         }
     }
     @media (max-width: 1300px) {
-        grid-template-rows: auto auto 80px auto 80px;
+        grid-template-rows: auto auto 50px auto 80px;
     }
 }

@@ -31,7 +31,7 @@ export const RecipePostTemplate = ({
             {ingredients.map( (ingredient, index) => (
               <p key={index}>{ingredient}</p>
             ))}
-            {ingredients.length % 2 !==0 ? <p></p> : null}
+            {ingredients.length % 2 !==0 ? <p className="empty"></p> : null}
           </div>
           <h3>Method</h3>
           <div className="recipe__method">
@@ -41,7 +41,7 @@ export const RecipePostTemplate = ({
             <p><span>Cook Time: </span>{cookTime}</p>
             <p><span>Serves: </span>{serves}</p>
             <p><span>Prep Time: </span>{prepTime}</p>
-            <p></p>
+            <p className="empty"></p>
           </div>
       </div>
             {/* {tags && tags.length ? (
