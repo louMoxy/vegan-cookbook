@@ -11,8 +11,7 @@ prepTime: 25 mins
 cookTime: 30 mins
 serves: I usually get 40 small treat balls
 tags:
-  - Dog
-  - Treats
+  - Dog Treats
 category: Dog treats
 images:
   - image: /img/20180402_143406.jpg
