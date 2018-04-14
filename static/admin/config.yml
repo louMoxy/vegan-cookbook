@@ -30,7 +30,7 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Ingredients", name: "ingredients", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Blurb", name: "blurb", widget: "string"}
+      - {label: "Blurb", name: "blurb", widget: "string", required: false}
       - {label: "Prep Time", name: "prepTime", widget: "string"}
       - {label: "Cook Time", name: "cookTime", widget: "string"}
       - {label: "Serves", name: "serves", widget: "string"}
