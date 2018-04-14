@@ -20,12 +20,11 @@ cookTime: 45 - 50 mins
 serves: 1 yummy cake
 tags:
   - Cake
-  - Dessert
   - Chocolate
+category: Dessert
 images:
   - alt: Chocolate Cake
     image: /img/cake-1850011_1920.jpg
-category: Dessert
 ---
 * Heat oven and grease up two cake tins
 * Stir lemon juice (1 tbsp) in with the milk (300 ml) leave to curdle for a couple of mins
