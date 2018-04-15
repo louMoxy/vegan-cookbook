@@ -44,20 +44,8 @@ export const RecipePostTemplate = ({
             <p className="empty"></p>
           </div>
       </div>
-            {/* {tags && tags.length ? (
-              <div>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null} */}
         <div className="recipe__image">
-          {images.map( (img, index) => (
+          {images && images.map( (img, index) => (
               <div key={index} className={img.imgSize}>
                 <img src={img.image} alt={img.alt}/>
               </div>
