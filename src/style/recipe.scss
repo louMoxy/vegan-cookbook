@@ -62,7 +62,7 @@
                 &:nth-child(n+3) {
                     border-top: var(--border);
                 }
-                @media (max-width: 700px) {
+                @media (max-width: 995px) {
                     flex: 100%;
                     border-top: var(--border);
                     &:nth-child(odd) {
