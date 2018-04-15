@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import NavLink  from 'gatsby-link';
 require('../style/nav.scss');
 import Logo from '-!svg-react-loader?name=Logo!../img/logo.svg';
 import AllSvg from '../img/icons/all-icon.svg';
@@ -13,45 +13,45 @@ const Navbar = () => (
   <nav>
     <ul>
       <li>
-      <Link to="/" className="navbar-item">
+      <NavLink  to="/">
         <Logo />
-      </Link>
+      </NavLink >
     </li>
       <li>
-        <Link to="/">
+        <NavLink  to="/" activeClassName="active" exact>
           <AllSvg />
           <p>All</p>
-        </Link>
+        </NavLink >
       </li>
       <li>
-        <Link to="/category/breakfast" className="navbar-item">
+        <NavLink  to="/category/breakfast" activeClassName="active">
           <BreakfastSvg />
           <p>Breakfast</p>
-        </Link>
+        </NavLink >
       </li>
       <li>
-        <Link to="/category/dinner" className="navbar-item">
+        <NavLink  to="/category/dinner" activeClassName="active">
           <DinnerSvg />
           <p>Dinner</p>
-        </Link>
+        </NavLink >
       </li>
       <li>
-        <Link to="/category/dessert" className="navbar-item">
+        <NavLink  to="/category/dessert" activeClassName="active">
           <DessertSvg />
           <p>Dessert</p>
-        </Link>
+        </NavLink >
       </li>
       <li>
-        <Link to="/category/pantry" className="navbar-item">
+        <NavLink  to="/category/pantry" activeClassName="active">
           <PantrySvg />
           <p>Pantry</p>
-        </Link>
+        </NavLink >
       </li>
       <li>
-        <Link to="/category/dog-treats" className="navbar-item">
+        <NavLink  to="/category/dog-treats" activeClassName="active">
           <DogSvg />
           <p>Dog Treats</p>
-        </Link>
+        </NavLink >
       </li>
     </ul>
   </nav>

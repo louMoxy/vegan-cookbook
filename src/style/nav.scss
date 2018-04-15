@@ -46,6 +46,14 @@
             }
         }
         li:not(:first-child) {
+            .active {
+                svg {
+                    fill: var(--accent-color);
+                }
+                p {
+                   transform: translateX(0); 
+                }
+            }
             svg {
                 stroke: var(--subtle-color);
                 fill: var(--subtle-color);
