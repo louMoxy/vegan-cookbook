@@ -15,7 +15,7 @@ const RecipeCard = ({ post }) => (
 RecipeCard.propTypes = {
   post: PropTypes.objectOf(
     PropTypes.shape({
-      excerpt: PropTypes.string,
+      excerpt: PropTypes.object,
       fields: PropTypes.objectOf(
         PropTypes.shape({
           slug: PropTypes.string
