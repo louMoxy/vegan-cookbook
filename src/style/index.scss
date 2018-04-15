@@ -32,9 +32,9 @@
                 background: var(--primary-color);
                 color: var(--accent-color);
             }
-            @media (max-width: 700px) {
-                font-size: 12px;
-            }
+        }
+        @media (max-width: 700px) {
+            display: none;
         }
     }
     .card {
@@ -47,6 +47,7 @@
         z-index: 1;
         color: var(--subtle-color);
         font-size: 14px;
+        padding-bottom: 30px;
         &:hover {
             color: var(--subtle-color);
             &:before, &:after {
@@ -70,7 +71,7 @@
         }
         img {
             object-fit: cover;
-            height: 50%;
+            height: 250px;
             width: 90%;
             transition: width var(--animation-time);
         }
