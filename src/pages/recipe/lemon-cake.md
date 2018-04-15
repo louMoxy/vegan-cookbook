@@ -14,7 +14,7 @@ prepTime: 5 mins + 10 mins for cooling
 cookTime: 30 mins
 serves: 1 fresh tasting lemon cake
 tags:
-  - cake
+  - Cake
 category: Dessert
 images:
   - image: /img/annie-spratt-418650-unsplash.jpg

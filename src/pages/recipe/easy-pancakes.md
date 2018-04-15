@@ -15,7 +15,7 @@ prepTime: 5 mins
 cookTime: 20 mins
 serves: About 6 pancakes
 tags:
-  - ''
+  - 'Easy'
 category: Breakfast
 images:
   - image: /img/banana-breakfast-close-up-302548.jpg

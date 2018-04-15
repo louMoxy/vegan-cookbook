@@ -15,7 +15,7 @@ prepTime: 8 mins
 cookTime: 40 mins
 serves: 1 loaf of goodness
 tags:
-  - bread
+  - Bread
 category: Pantry
 images:
   - alt: Bread
