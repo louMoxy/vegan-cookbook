@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-import { kebabCase, uniq, flatMap, xor} from 'lodash';
+import { kebabCase, uniq, flatMap, xor, capitalize} from 'lodash';
 import RecipeCard from './../components/RecipeCard';
 import Tags from './../components/Tags';
 require('../style/index.scss');
@@ -23,9 +23,8 @@ export default class IndexPage extends React.Component {
 
   postsFilter(post) {
     const tags = post.node.frontmatter.tags;
-    const stateTags = this.state.tags;
-    return stateTags.length > 0 ? 
-       post.node.frontmatter && tags.some(tag => stateTags.includes(tag))
+    const stateTags = this.state.tags;    return stateTags.length > 0 ? 
+       post.node.frontmatter && tags.some(tag => stateTags.includes(_.capitalize(tag) ))
       : true
 }
 
@@ -33,7 +32,7 @@ export default class IndexPage extends React.Component {
     const { data } = this.props;
     if(!data.allMarkdownRemark) {return null}
     const { edges: posts } = data.allMarkdownRemark;
-    const tags = uniq(flatMap(posts, post => post.node.frontmatter.tags));
+    const tags = uniq(flatMap(posts, post => post.node.frontmatter.tags).map(tag => _.capitalize(tag)));
     return (
       <section className="index">
         <Tags 
