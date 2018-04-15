@@ -21,7 +21,9 @@ serves: 1 yummy cake
 tags:
   - Cake
   - Chocolate
+  - Easy
 category: Dessert
+blurb: 'Too good to share chocolate cake'
 images:
   - alt: Chocolate Cake
     image: /img/cake-1850011_1920.jpg
