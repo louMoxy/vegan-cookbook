@@ -22,9 +22,9 @@ tags:
 category: Dinner
 images:
   - image: /img/20180415_184011.jpg
-    imgSize: horizontal
+    imgSize: vertical
   - image: /img/20180415_190559.jpg
-    imgSize: horizontal
+    imgSize: vertical
 ---
 * Soak cashews (1/2 cup) for 8hrs in cold water, or 1hr in hot water
 * Boil the spaghetti
