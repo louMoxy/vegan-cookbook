@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import { kebabCase, uniq, flatMap, xor, capitalize} from 'lodash';
 import RecipeCard from './../components/RecipeCard';
+import About from './../components/AboutSection';
 import Tags from './../components/Tags';
+import Contact from './../components/ContactForm';
+import Footer from './../components/Footer';
 require('../style/index.scss');
 
 export default class IndexPage extends React.Component {
@@ -34,18 +37,27 @@ export default class IndexPage extends React.Component {
     const { edges: posts } = data.allMarkdownRemark;
     const tags = uniq(flatMap(posts, post => post.node.frontmatter.tags).map(tag => _.capitalize(tag)));
     return (
-      <section className="index">
-        <Tags 
-          tags = {tags}
-          parentClass = 'index'
-          stateTags = {this.state.tags}
-          clickHandler = {this.modifyTags.bind(this)}
-        />
-          {posts && posts
-            .filter(post => this.postsFilter(post))
-            .map(({ node: post }) => (
-              <RecipeCard post={post} key={post.id}/>
-            ))}
+      <section className="container">
+        <section className="index">
+            {posts && posts
+              .filter(post => this.postsFilter(post))
+              .map(({ node: post }) => (
+                <RecipeCard post={post} key={post.id}/>
+              ))}
+        </section>
+        <aside>
+          <div>
+            <Tags 
+              tags = {tags}
+              parentClass = 'index'
+              stateTags = {this.state.tags}
+              clickHandler = {this.modifyTags.bind(this)}
+            />
+            <About />
+            <Contact />
+            <Footer />
+          </div>
+        </aside>
       </section>
     )
   }

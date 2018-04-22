@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import '../style/root.scss';
 
 const TemplateWrapper = ({ children }) => (
@@ -11,7 +10,6 @@ const TemplateWrapper = ({ children }) => (
     <Navbar children />
     <div className="content">{children()}
     </div>
-    <Footer />
   </div>
 )
 
