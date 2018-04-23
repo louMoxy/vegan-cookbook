@@ -19,6 +19,7 @@
         color: var(--subtle-color);
         font-size: 14px;
         padding-bottom: 30px;
+        max-height: 400px;
         &:hover {
             color: var(--subtle-color);
             &:before, &:after {
