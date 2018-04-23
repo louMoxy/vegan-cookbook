@@ -39,32 +39,22 @@ export default class Contact extends React.Component {
             <form
             name="contact"
             method="post"
-            action="javascript:void(0);"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             onSubmit={this.handleSubmit}
             >
-            
-            <p hidden>
-                <label>
+                <label hidden>
                 Don’t fill this out: <input name="bot-field" onChange={this.handleChange} />
                 </label>
-            </p>
-            <p>
                 <label>
                 Email:<br />
                 <input type="email" name="email" onChange={this.handleChange}/>
                 </label>
-            </p>
-            <p>
                 <label>
                 Message:<br />
                 <textarea name="message" onChange={this.handleChange}/>
                 </label>
-            </p>
-            <p>
                 <button type="submit">Send</button>
-            </p>
             </form>
         </div>
       </div>
