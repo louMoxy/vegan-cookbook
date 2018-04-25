@@ -1,27 +1,24 @@
-# Gatsby + Netlify CMS Starter
+# Vegan Cookbook
 
-This repo contains an example business website that is built with [Gatsby](https://www.gatsbyjs.org/), and [Netlify CMS](https://www.netlifycms.org): **[Demo Link](https://gatsby-netlify-cms.netlify.com/)**.
+This is a **[netlify CMS](https://gatsby-netlify-cms.netlify.com/)** driven website, which is deployed by Netlify.
+The design is my own, and it uses **[Gatsby](https://www.gatsbyjs.org/)** to generate static files using **[React](https://reactjs.org/)** and **[GraphQL](https://graphql.org/)** 
 
-It follows the [JAMstack architecture](https://jamstack.org) by using Git as a single source of truth, and [Netlify](https://www.netlify.com) for continuous deployment, and CDN distribution.
+## Getting Started
 
-## Prerequisites
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
 
 - Node (I recommend using v8.2.0 or higher)
 - [Gatsby CLI](https://www.gatsbyjs.org/docs/)
 
-## Getting Started (Recommended)
-
-Netlify CMS can run in any frontend web environment, but the quickest way to try it out is by running it on a pre-configured starter site with Netlify. The example here is the Kaldi coffee company template (adapted from [One Click Hugo CMS](https://github.com/netlify-templates/one-click-hugo-cms)). Use the button below to build and deploy your own copy of the repository:
-
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/AustinGreen/gatsby-starter-netlify-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
-
-After clicking that button, you’ll authenticate with GitHub and choose a repository name. Netlify will then automatically create a repository in your GitHub account with a copy of the files from the template. Next, it will build and deploy the new site on Netlify, bringing you to the site dashboard when the build is complete. Next, you’ll need to set up Netlify’s Identity service to authorize users to log in to the CMS.
+### Installing
 
 ### Access Locally
 ```
-$ git clone https://github.com/[GITHUB_USERNAME]/[REPO_NAME].git
-$ cd [REPO_NAME]
-$ yarn
+$ git clone https://github.com/louMoxy/vegan-cookbook.git
+$ cd vegan-cookbook
+$ yarn 
 $ npm run develop
 ```
 To test the CMS locally, you'll need run a production build of the site:
@@ -29,17 +26,6 @@ To test the CMS locally, you'll need run a production build of the site:
 $ npm run build
 $ npm run serve
 ```
-
-## Getting Started (Without Netlify)
-```
-$ gatsby new [SITE_DIRECTORY_NAME] https://github.com/AustinGreen/gatsby-starter-netlify-cms/
-$ cd [SITE_DIRECTORY_NAME]
-$ npm run build
-$ npm run serve
-```
-
-### Setting up the CMS
-Follow the [Netlify CMS Quick Start Guide](https://www.netlifycms.org/docs/quick-start/#authentication) to set up authentication, and hosting.
 
 ## Debugging
 Windows users might encounter ```node-gyp``` errors when trying to npm install.
@@ -50,3 +36,17 @@ npm install --global --production windows-build-tools
 ```
 
 [Full details here](https://www.npmjs.com/package/node-gyp 'NPM node-gyp page')
+
+If you are using windows, I personally found it easier to use npm install rather than yarn due to enviroment permissions with the Sharp plugin, it may take a bit longer but using npm should fix any issues. 
+
+## Tests
+
+Test to be added.... (hopefully)
+
+## Deployment
+
+Deployment is handled via netlify on the production branch
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
