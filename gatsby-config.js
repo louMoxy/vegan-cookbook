@@ -35,6 +35,14 @@ module.exports = {
     },
     {
       resolve: '@jacobmischka/gatsby-plugin-react-svg'
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-118254237-1",
+        head: true,
+        exclude: ["/admin/*"]
+      },
     }
   ],
 }
